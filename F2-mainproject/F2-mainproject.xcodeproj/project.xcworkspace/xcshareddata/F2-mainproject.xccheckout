@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>647E028E-3047-444D-BAC6-E28718B09870</string>
+	<key>IDESourceControlProjectName</key>
+	<string>F2-mainproject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8831D733A6FC82B2BEA484E45C6BD89D474F2755</key>
+		<string>https://github.com/adamrcaldwell/cf-f2-mainproject.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>F2-mainproject/F2-mainproject.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8831D733A6FC82B2BEA484E45C6BD89D474F2755</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/adamrcaldwell/cf-f2-mainproject.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8831D733A6FC82B2BEA484E45C6BD89D474F2755</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8831D733A6FC82B2BEA484E45C6BD89D474F2755</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cf-f2-mainproject</string>
+		</dict>
+	</array>
+</dict>
+</plist>
