@@ -14,6 +14,7 @@
 		A30597D21A05640400C77A49 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A30597D01A05640400C77A49 /* LaunchScreen.xib */; };
 		A30597DE1A05640400C77A49 /* F2_mainprojectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30597DD1A05640400C77A49 /* F2_mainprojectTests.swift */; };
 		A30597E81A05643000C77A49 /* PersonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30597E71A05643000C77A49 /* PersonClass.swift */; };
+		A34E615D1A1007CC009A6EAB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E615C1A1007CC009A6EAB /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A30597DC1A05640400C77A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30597DD1A05640400C77A49 /* F2_mainprojectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F2_mainprojectTests.swift; sourceTree = "<group>"; };
 		A30597E71A05643000C77A49 /* PersonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonClass.swift; path = ../PersonClass.swift; sourceTree = "<group>"; };
+		A34E615C1A1007CC009A6EAB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				A30597C71A05640400C77A49 /* AppDelegate.swift */,
 				A30597C91A05640400C77A49 /* ViewController.swift */,
 				A30597CB1A05640400C77A49 /* Main.storyboard */,
+				A34E615C1A1007CC009A6EAB /* DetailViewController.swift */,
 				A30597CE1A05640400C77A49 /* Images.xcassets */,
 				A30597D01A05640400C77A49 /* LaunchScreen.xib */,
 				A30597C51A05640400C77A49 /* Supporting Files */,
@@ -218,6 +221,7 @@
 				A30597E81A05643000C77A49 /* PersonClass.swift in Sources */,
 				A30597CA1A05640400C77A49 /* ViewController.swift in Sources */,
 				A30597C81A05640400C77A49 /* AppDelegate.swift in Sources */,
+				A34E615D1A1007CC009A6EAB /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				A30597E31A05640400C77A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A30597E41A05640400C77A49 /* Build configuration list for PBXNativeTarget "F2-mainprojectTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				A30597E61A05640400C77A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

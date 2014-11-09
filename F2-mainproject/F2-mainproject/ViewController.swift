@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         
         self.namesList.append(myPersonOne)
         self.namesList.append(myPersonTwo)
@@ -44,6 +45,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         var personToDisplay = namesList[indexPath.row]
         cell.textLabel.text = personToDisplay.returnFullName()
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SHOW_DETAIL" {
+            let detailViewController = segue.destinationViewController as DetailViewController
+            let selectedIndexPath = self.tableView.indexPathForSelectedRow()
+            var personToPass = self.namesList[selectedIndexPath!.row]
+            detailViewController.selectedPerson = personToPass
+        }
     }
 
 }
