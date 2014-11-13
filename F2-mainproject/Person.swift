@@ -13,6 +13,7 @@ class Person {
     var firstName : String
     var lastName : String
     var isStudent : Bool
+    var image : UIImage?
     
     init (firstName : String, lastName : String, isStudent: Bool) {
         self.firstName = firstName
