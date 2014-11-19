@@ -15,6 +15,8 @@
 		A30597DE1A05640400C77A49 /* F2_mainprojectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30597DD1A05640400C77A49 /* F2_mainprojectTests.swift */; };
 		A30597E81A05643000C77A49 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30597E71A05643000C77A49 /* Person.swift */; };
 		A34E615D1A1007CC009A6EAB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E615C1A1007CC009A6EAB /* DetailViewController.swift */; };
+		A39D1EB61A1D2D14009CC9AA /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39D1EB51A1D2D14009CC9AA /* PersonTableViewCell.swift */; };
+		A39D1EB81A1D35B2009CC9AA /* Roster.plist in Resources */ = {isa = PBXBuildFile; fileRef = A39D1EB71A1D35B2009CC9AA /* Roster.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		A30597DD1A05640400C77A49 /* F2_mainprojectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F2_mainprojectTests.swift; sourceTree = "<group>"; };
 		A30597E71A05643000C77A49 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
 		A34E615C1A1007CC009A6EAB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A39D1EB51A1D2D14009CC9AA /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		A39D1EB71A1D35B2009CC9AA /* Roster.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Roster.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A30597E71A05643000C77A49 /* Person.swift */,
+				A39D1EB51A1D2D14009CC9AA /* PersonTableViewCell.swift */,
 				A30597C71A05640400C77A49 /* AppDelegate.swift */,
 				A30597C91A05640400C77A49 /* ViewController.swift */,
 				A30597CB1A05640400C77A49 /* Main.storyboard */,
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				A30597C61A05640400C77A49 /* Info.plist */,
+				A39D1EB71A1D35B2009CC9AA /* Roster.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30597CD1A05640400C77A49 /* Main.storyboard in Resources */,
+				A39D1EB81A1D35B2009CC9AA /* Roster.plist in Resources */,
 				A30597D21A05640400C77A49 /* LaunchScreen.xib in Resources */,
 				A30597CF1A05640400C77A49 /* Images.xcassets in Resources */,
 			);
@@ -221,6 +228,7 @@
 				A30597E81A05643000C77A49 /* Person.swift in Sources */,
 				A30597CA1A05640400C77A49 /* ViewController.swift in Sources */,
 				A30597C81A05640400C77A49 /* AppDelegate.swift in Sources */,
+				A39D1EB61A1D2D14009CC9AA /* PersonTableViewCell.swift in Sources */,
 				A34E615D1A1007CC009A6EAB /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

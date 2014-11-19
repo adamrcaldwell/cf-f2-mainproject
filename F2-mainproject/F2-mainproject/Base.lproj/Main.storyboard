@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jo4-4N-kFW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -24,18 +25,45 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="F2_mainproject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="U4g-Yi-f96">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="U4g-Yi-f96">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PERSON_CELL" id="ymV-9v-enS">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PERSON_CELL" rowHeight="100" id="ymV-9v-enS" customClass="PersonTableViewCell" customModule="F2_mainproject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ymV-9v-enS" id="AJm-sC-aQr">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f7T-MS-yCa">
+                                            <rect key="frame" x="18" y="15" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="GYO-Cu-Itw"/>
+                                                <constraint firstAttribute="width" constant="70" id="qt3-cc-s0Q"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgE-kI-FC5">
+                                            <rect key="frame" x="96" y="15" width="150" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="Jfb-e2-4je"/>
+                                                <constraint firstAttribute="width" constant="150" id="aUU-xg-9L9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="f7T-MS-yCa" firstAttribute="leading" secondItem="AJm-sC-aQr" secondAttribute="leadingMargin" constant="10" id="PUu-O4-Uvl"/>
+                                        <constraint firstAttribute="centerY" secondItem="f7T-MS-yCa" secondAttribute="centerY" id="ayX-z8-Fla"/>
+                                        <constraint firstItem="SgE-kI-FC5" firstAttribute="leading" secondItem="f7T-MS-yCa" secondAttribute="trailing" constant="8" id="mus-Vz-tg7"/>
+                                        <constraint firstItem="SgE-kI-FC5" firstAttribute="top" secondItem="f7T-MS-yCa" secondAttribute="top" id="raG-HS-Nk6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="personImage" destination="f7T-MS-yCa" id="IfP-mS-8uy"/>
+                                    <outlet property="personLabel" destination="SgE-kI-FC5" id="NDb-Af-3TL"/>
                                     <segue destination="OB5-6t-RzI" kind="show" identifier="SHOW_DETAIL" id="pw2-SS-Ill"/>
                                 </connections>
                             </tableViewCell>

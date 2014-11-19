@@ -12,10 +12,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableView: UITableView!
     
-    var myPersonOne = Person(firstName: "Adam", lastName: "Caldwell", isStudent: true)
-    var myPersonTwo = Person(firstName: "Rick", lastName: "Lopez", isStudent: false)
-    var myPersonThree = Person(firstName: "Matthew", lastName: "Conquergood", isStudent: true)
-    
     var namesList = [Person]()
 
     override func viewDidLoad() {
@@ -23,10 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        self.namesList.append(myPersonOne)
-        self.namesList.append(myPersonTwo)
-        self.namesList.append(myPersonThree)
+        self.loadFromPlist()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -36,14 +29,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    func loadFromPlist() {
+        
+        let plistURL = NSBundle.mainBundle().pathForResource("Roster", ofType: "plist")
+        
+        let plistArray = NSArray(contentsOfFile: plistURL!)
+        for object in plistArray! {
+            println("looped!")
+            if let personDictionary = object as? NSDictionary {
+                let firstNameFiller = personDictionary["First Name"] as String
+                let lastNameFiller = personDictionary["Last Name"] as String
+                let isStudentFiller = personDictionary["Is Student"] as Bool
+                var person = Person(firstName: firstNameFiller, lastName: lastNameFiller, isStudent: isStudentFiller)
+                self.namesList.append(person)
+            }
+        }
+        
+        
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.namesList.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PERSON_CELL", forIndexPath: indexPath) as UITableViewCell
-        var personToDisplay = namesList[indexPath.row]
-        cell.textLabel.text = personToDisplay.returnFullName()
+        let cell = tableView.dequeueReusableCellWithIdentifier("PERSON_CELL", forIndexPath: indexPath) as PersonTableViewCell
+        var personToDisplay = self.namesList[indexPath.row]
+        cell.personLabel.text = personToDisplay.returnFullName()
         return cell
     }
     
