@@ -18,7 +18,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     var imagePickerController = UIImagePickerController()
     
-    var selectedPerson: Person = Person(firstName: "", lastName: "", isStudent: true)
+    var selectedPerson: Person = Person(firstName: "", lastName: "")
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

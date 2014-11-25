@@ -17,10 +17,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let peopleFromArchive = self.loadFromArchive() as [Person]? {
+            self.namesList = peopleFromArchive
+        } else {
+            self.loadFromPlist()
+            self.saveToArchive()
+        }
+        var hasLaunched = NSUserDefaults.standardUserDefaults().boolForKey("firstTime")
+        
+        if hasLaunched == false {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
+        }
+        
+        self.title = "Class Roster"
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.loadFromPlist()
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,19 +39,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+        self.saveToArchive()
+    }
+    
+    func loadFromArchive() -> [Person]? {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        
+        if let peopleFromArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath + "/archive") as? [Person] {
+            return peopleFromArchive
+        }
+            return nil
+    }
+    
+    func saveToArchive() {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        NSKeyedArchiver.archiveRootObject(self.namesList, toFile: documentsPath + "/archive")
+    }
     
     func loadFromPlist() {
         
         let plistURL = NSBundle.mainBundle().pathForResource("Roster", ofType: "plist")
-        
         let plistArray = NSArray(contentsOfFile: plistURL!)
         for object in plistArray! {
-            println("looped!")
             if let personDictionary = object as? NSDictionary {
                 let firstNameFiller = personDictionary["First Name"] as String
                 let lastNameFiller = personDictionary["Last Name"] as String
-                let isStudentFiller = personDictionary["Is Student"] as Bool
-                var person = Person(firstName: firstNameFiller, lastName: lastNameFiller, isStudent: isStudentFiller)
+                var person = Person(firstName: firstNameFiller, lastName: lastNameFiller)
                 self.namesList.append(person)
             }
         }
@@ -56,6 +84,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("PERSON_CELL", forIndexPath: indexPath) as PersonTableViewCell
         var personToDisplay = self.namesList[indexPath.row]
         cell.personLabel.text = personToDisplay.returnFullName()
+        cell.personImage.image = personToDisplay.image
         return cell
     }
     
